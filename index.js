@@ -8,6 +8,7 @@ const manifest = {
   id: "org.filelist.stremio",
   version: "1.0.0",
   name: "Filelist Addon",
+  logo: "https://www.stremio.com/website/stremio-logo-small.png",
   description: "Addon Stremio care aduce torrente de pe filelist.io",
   types: ["movie", "series"],
   resources: ["stream"],

@@ -5,15 +5,46 @@ const axios = require("axios");
 const app = express();
 
 const manifest = {
-  id: "org.filelist.stremio",
-  version: "1.0.0",
-  name: "Filelist Addon",
-  logo: "https://www.stremio.com/website/stremio-logo-small.png",
-  description: "Addon Stremio care aduce torrente de pe filelist.io",
-  types: ["movie", "series"],
-  resources: ["stream"],
-  catalogs: [],
-};
+  id: 'com.strefdsafmio.torrentio.catalog.addon',
+    version: '3.0.2',
+    name: 'Torrent Cafdsagtalogs',
+    description: 'Provides catgfdsgsdalogs for movies/series/anime based on top seeded torrents. Requires Kitsu addon for anime.',
+    logo: `https://i.ibb.co/w4BnkC9/GwxAcDV.png`,
+    background: `https://i.ibb.co/VtSfFP9/t8wVwcg.jpg`,
+    types: [Type.MOVIE, Type.SERIES, Type.ANIME],
+    resources: ['catalog'],
+    catalogs: [
+      {
+        id: 'top-movies',
+        type: Type.MOVIE,
+        name: "Top seeded",
+        pageSize: 20,
+        extra: [{ name: 'genre', options: genres }, { name: 'skip' }],
+        genres: genres
+      },
+      {
+        id: 'top-series',
+        type: Type.SERIES,
+        name: "Top seeded",
+        pageSize: 20,
+        extra: [{ name: 'genre', options: genres }, { name: 'skip' }],
+        genres: genres
+      },
+      {
+        id: 'top-anime',
+        type: Type.ANIME,
+        name: "Top seeded",
+        pageSize: 20,
+        extra: [{ name: 'genre', options: genres }, { name: 'skip' }],
+        genres: genres
+      }
+    ],
+    behaviorHints: {
+      // @TODO might enable configuration to configure providers
+      configurable: false,
+      configurationRequired: false
+    }
+  };
 
 const builder = new addonBuilder(manifest);
 

@@ -5,14 +5,15 @@ const axios = require("axios");
 const app = express();
 
 const manifest = {
-  "id": "com.example.myaddon",
-  "version": "1.0.0",
-  "name": "My Minimal Addon",
-  "description": "Minimal manifest to install",
-  "resources": ["catalog"],
-  "types": ["movie"]
+  id: "org.filelist.stremio",
+  version: "1.0.0",
+  name: "Filelist Addon",
+  logo: "https://www.stremio.com/website/stremio-logo-small.png",
+  description: "Addon Stremio care aduce torrente de pe filelist.io",
+  types: ["movie", "series"],
+  resources: ["stream"],
+  catalogs: [],
 };
-
 
 const builder = new addonBuilder(manifest);
 

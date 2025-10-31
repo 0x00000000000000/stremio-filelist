@@ -12,7 +12,12 @@ const manifest = {
   description: "Addon Stremio care aduce torrente de pe filelist.io",
   types: ["movie", "series"],
   resources: ["stream"],
-  catalogs: [],
+  catalogs: [
+        {
+            "type": "movie",
+            "id": "moviecatalog"
+        }
+    ],
 };
 
 const builder = new addonBuilder(manifest);
